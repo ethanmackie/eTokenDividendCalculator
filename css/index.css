@@ -68,7 +68,7 @@ h1 {
 }
 
 .spinner-absolute {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -850px;
