@@ -1,7 +1,7 @@
 # eTokenDividendCalculator
 
 ## Overview
-eToken Dividend Calculator which outputs a list of eCash addresses that are holding the specified eToken and their eligible dividend based on the chosen distribution ratio.
+The eToken Dividend Calculator is a tool which outputs a list of eCash addresses that are holding the specified eToken and their eligible dividend based on the chosen distribution ratio.
 * **eToken ID** refers to the ID of the token you want to look up
 * **Total XEC For Distribution** refers to how much XEC you want to airdrop in total
 * **XEC Distribution ratio** refers to whether you want each token holder to receive an amount of XEC based on how many of your tokens they hold (pro rata), or evenly across everyone (equal)
