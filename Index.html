@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>eCash Dividend Calculator</title>
+    <meta charset="UTF-8">
+    <script src='https://unpkg.com/etoken-list'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js"></script>
+    <script src="./script/index.js"></script>
+
+    <script>
+    function showInstructions() {
+      var x = document.getElementById("instructions");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    </script>
+  </head>
+  <body bgcolor=”#001137" style="background-image: url('./img/divcalcbg.svg');background-size: cover;">
+    <h1>eToken Dividend Calculator</h1>
+    <button onclick="showInstructions()">Instructions</button>
+    <div id="instructions" style="display:none">
+        <b>Overview</b><br><br>
+        This is a tool for users who want to distribute XEC dividends to holders of their particular eTokens.<br>
+        <li><b>eToken ID</b> refers to the ID of the token you want to look up<br></li>
+        <li><b>Total XEC For Distribution</b> refers to how much XEC you want to airdrop in total<br></li>
+        <li><b>XEC Distribution ratio</b> refers to whether you want each token holder to receive an amount of XEC <br>based on how much tokens they hold (pro rata), or evenly across everyone (equal)<br></li>
+        <li><b>Block Height Cutoff</b> refers to the block height where the eligible recipients will end.</li>
+        <br>
+        <b>Usage:</b><br>
+        <ol>
+          <li>Fill in the eToken ID, total XEC dividend and distribution ratio</li>
+          <li>If you simply want the latest block height, just grab from the <a href="https://explorer.bitcoinabc.org" target="_blank">Bitcoin ABC Explorer</a></li>
+          <li>Click on Calculate Recipients, this will take up to 15 seconds to query the blockchain</li>
+          <li>Then click on CopyToClipboard to copy the results to memory</li>
+          <li>Open your ElectrumABC wallet and goto Tools -> Pay To Many</li>
+          <li>Paste in the results to the 'Pay To' field and click send in your wallet to execute the distribution</li>
+        </ol>
+        <br>
+
+    </div>
+    <p>eToken ID:
+    <input id="eTokenIdInput" name="eTokenId" size="55" required="" value="" type="string" required></p>
+    <p>Total XEC For Distribution:
+    <input id="dividendInput" name="dividend" min="10" step="any" required="" value="" type="number" required></p>
+    <p>
+    XEC Distribution ratio:
+    <input type="radio" id="prorata" name="ratioType" value="prorata"><label for="prorata">Pro rata</label>
+    <input type="radio" id="equal" name="ratioType" value="equal" checked><label for="equal">Equal</label><br>
+    </p>
+    <p>Block Height Cutoff <a href="https://explorer.bitcoinabc.org/" target="_blank">(refer to explorer)</a>:
+    <input id="blockHeightInput" name="blockHeight" min="10" step="any" required="" value="" type="number" required></p>
+    <p>
+    <div class="loader"></div>
+    <p><button type="button" class="button" onclick="calculateDividends()">Calculate Recipients</button></p>
+    Output for ElectrumABC Wallet:<br>
+    <textarea id="result" rows="20" cols="77" placeholder="Please input parameters." readonly></textarea>
+
+    <p><button type="button" class="buttonCopyExport" onclick="copyToClipboard()">Copy To Clipboard</button>
+    <button type="button" class="buttonCopyExport" onclick="exportCSV()">Export In CSV</button></p>
+
+  </body>
+</html>

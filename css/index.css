@@ -1,0 +1,101 @@
+body {
+  font-family: 'Montserrat', serif;
+  color:White;
+}
+input, textarea {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(0, 0, 0, 0)"
+}
+h1 {
+  font-family: 'Montserrat', serif;
+  font-size: 40px;
+}
+.button {
+  background-color: #0074C2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.buttonCopyExport {
+  background-color: #0074C2;
+  border: none;
+  color: white;
+  padding: 7px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: #273498;
+  color: white;
+}
+
+.button:active {
+  background-color: #00ABE7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* progress spinner */
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner,
+.spinner:before {
+  width: 220px;
+  height: 220px;
+  box-sizing: border-box;
+}
+
+.spinner:before {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner .6s linear infinite;
+}
+
+.spinner-absolute {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -500px;
+}
+
+/* Animations */
+
+.spinner-add,
+.spinner-remove {
+  animation-fill-mode: both;
+  animation-duration: .4s;
+}
+
+.spinner-add {
+  animation-name: spinner-add;
+}
+
+@keyframes spinner-add {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+.spinner-remove {
+  animation-name: spinner-remove;
+}
+
+@keyframes spinner-remove {
+  to {transform: scale(0);}
+}
