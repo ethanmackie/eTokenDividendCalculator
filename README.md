@@ -5,7 +5,7 @@ The eToken Dividend Calculator is a tool which outputs a list of eCash addresses
 * **eToken ID** refers to the ID of the token you want to look up
 * **Total XEC For Distribution** refers to how much XEC you want to airdrop in total
 * **XEC Distribution ratio** refers to whether you want each token holder to receive an amount of XEC based on how many of your tokens they hold (pro rata), or evenly across everyone (equal)
-* **Block Height Cutoff** refers to the block height where the eligible recipients will end.
+* **Block Height Cutoff** refers to the block height where the eligible recipients will end. **IMPORTANT** Make sure your final eToken send transaction has been confirmed/mined before grabbing the latest block height to ensure all your token recipients are included in the output.
 
 ## Instructions
 
